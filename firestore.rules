@@ -1,0 +1,115 @@
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+    function signedIn() {
+      return request.auth != null;
+    }
+
+    function userDoc() {
+      return get(/databases/$(database)/documents/users/$(request.auth.uid));
+    }
+
+    function hasRole(role) {
+      return signedIn() && userDoc().data.role == role;
+    }
+
+    function isAdmin() {
+      return hasRole('admin');
+    }
+
+    function owns(userId) {
+      return signedIn() && request.auth.uid == userId;
+    }
+
+    match /users/{userId} {
+      allow create: if signedIn() && request.auth.uid == userId;
+      allow read, update: if owns(userId) || isAdmin();
+      allow delete: if isAdmin();
+    }
+
+    match /farmers/{farmerId} {
+      allow read: if signedIn();
+      allow create: if signedIn() && request.resource.data.userId == request.auth.uid;
+      allow update: if isAdmin() || owns(resource.data.userId);
+      allow delete: if isAdmin();
+    }
+
+    match /buyers/{buyerId} {
+      allow read: if signedIn();
+      allow create: if signedIn() && request.resource.data.userId == request.auth.uid;
+      allow update: if isAdmin() || owns(resource.data.userId);
+      allow delete: if isAdmin();
+    }
+
+    match /livestock/{livestockId} {
+      allow read: if resource.data.verificationStatus == 'verified' || signedIn();
+      allow create: if signedIn();
+      allow update: if isAdmin() || owns(resource.data.currentOwnerId);
+      allow delete: if isAdmin();
+    }
+
+    match /vaccinations/{recordId} {
+      allow read: if signedIn();
+      allow create, update: if isAdmin() || hasRole('farmer');
+      allow delete: if isAdmin();
+    }
+
+    match /medical_records/{recordId} {
+      allow read: if signedIn();
+      allow create, update: if isAdmin() || hasRole('farmer');
+      allow delete: if isAdmin();
+    }
+
+    match /marketplace_listings/{listingId} {
+      allow read: if true;
+      allow create: if signedIn() && request.resource.data.sellerId == request.auth.uid;
+      allow update: if isAdmin() || owns(resource.data.sellerId);
+      allow delete: if isAdmin() || owns(resource.data.sellerId);
+    }
+
+    match /orders/{orderId} {
+      allow read: if isAdmin() || owns(resource.data.buyerId) || owns(resource.data.sellerId);
+      allow create: if signedIn() && request.resource.data.buyerId == request.auth.uid;
+      allow update: if isAdmin() || owns(resource.data.buyerId) || owns(resource.data.sellerId);
+      allow delete: if isAdmin();
+    }
+
+    match /deliveries/{deliveryId} {
+      allow read: if signedIn();
+      allow create, update, delete: if isAdmin();
+    }
+
+    match /reviews/{reviewId} {
+      allow read: if true;
+      allow create: if signedIn() && request.resource.data.reviewerId == request.auth.uid;
+      allow update, delete: if isAdmin() || owns(resource.data.reviewerId);
+    }
+
+    match /messages/{messageId} {
+      allow read: if isAdmin() || owns(resource.data.senderId) || owns(resource.data.recipientId);
+      allow create: if signedIn() && request.resource.data.senderId == request.auth.uid;
+      allow update, delete: if isAdmin();
+    }
+
+    match /notifications/{notificationId} {
+      allow read, update: if isAdmin() || owns(resource.data.userId);
+      allow create, delete: if isAdmin();
+    }
+
+    match /investor_leads/{leadId} {
+      allow create: if true;
+      allow read, update, delete: if isAdmin();
+    }
+
+    match /partners/{partnerId} {
+      allow read: if true;
+      allow create, update, delete: if isAdmin();
+    }
+
+    match /waitlist/{waitlistId} {
+      allow create: if true;
+      allow read, update, delete: if isAdmin();
+    }
+  }
+}

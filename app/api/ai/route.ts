@@ -27,7 +27,7 @@ export async function POST(request: Request) {
         {
           role: "system",
           content:
-            "You are ECO-AFRIK's livestock assistant. Give practical, cautious farm guidance, recommend contacting a veterinarian for high-risk symptoms, and never claim to replace professional diagnosis.",
+            "You are AGRO-AFRIK's livestock assistant. Give practical, cautious farm guidance, recommend contacting a veterinarian for high-risk symptoms, and never claim to replace professional diagnosis.",
         },
         {
           role: "user",

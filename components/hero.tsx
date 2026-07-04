@@ -11,7 +11,7 @@ export default function HeroAnimation() {
       animate={{ x: 0, opacity: 1 }}
       transition={{ duration: 0.8, ease: "easeOut" }}
     >
-      <Eyebrow>Mission: Connecting Livestock to Opportunity Through Smart Farming Technology</Eyebrow>
+      <Eyebrow>Mission: Connecting Livestock to Opportunity Through Smart Farming And Technology</Eyebrow>
                   
     </motion.div>
   );

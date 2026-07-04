@@ -214,7 +214,7 @@ export default function Home() {
 
       <section className="bg-neutral-50 px-4 py-20 md:px-8">
         <div className="mx-auto max-w-7xl">
-          <SectionHeading eyebrow="The Solution" title="A verified livestock operating system from farm to buyer." body="ECO-AFRIK turns every animal into a data-backed asset, then connects verified supply to procurement, logistics, finance, insurance, and analytics." />
+          <SectionHeading eyebrow="The Solution" title="A verified livestock operating system from farm to buyer." body="AGRO-AFRIK turns every animal into a data-backed asset, then connects verified supply to procurement, logistics, finance, insurance, and analytics." />
           <div className="grid gap-8 lg:grid-cols-[1fr_0.9fr]">
             <div className="grid gap-3">
               {solutionFlow.map((step, index) => {
@@ -275,11 +275,11 @@ export default function Home() {
 
       <section id="market" className="px-4 py-20 md:px-8">
         <div className="mx-auto max-w-7xl">
-          <SectionHeading eyebrow="Market Opportunity" title="A large, recurring, multi-sided market." body="ECO-AFRIK starts with verified livestock trade, then expands into identity, finance, insurance, logistics, data, and compliance infrastructure." />
+          <SectionHeading eyebrow="Market Opportunity" title="A large, recurring, multi-sided market." body="AGRO-AFRIK starts with verified livestock trade, then expands into identity, finance, insurance, logistics, data, and compliance infrastructure. Africa-focused, 2026-2036." />
           <div className="grid gap-8 lg:grid-cols-[1.05fr_0.95fr]">
             <div className="rounded-lg border border-black/10 bg-white p-6 shadow-sm">
               <div className="grid gap-4 sm:grid-cols-3">
-                {["$55B TAM", "$12B SAM", "$1.4B SOM"].map((item) => (
+                {["$90B-$152B TAM", "$27B-$46B SAM", "$230M SOM"].map((item) => (
                   <div key={item} className="rounded-lg bg-neutral-50 p-4">
                     <p className="text-2xl font-semibold">{item.split(" ")[0]}</p>
                     <p className="text-sm text-neutral-500">{item.split(" ")[1]}</p>
@@ -449,7 +449,7 @@ export default function Home() {
 
       <section className="px-4 py-20 md:px-8">
         <div className="mx-auto max-w-7xl">
-          <SectionHeading eyebrow="Platform Modules" title="Three operating dashboards plus an AI farm assistant." body="ECO-AFRIK supports farmers, buyers, and administrators with role-specific workflows connected to one Firestore-backed platform model." />
+          <SectionHeading eyebrow="Platform Modules" title="Three operating dashboards plus an AI farm assistant." body="AGRO-AFRIK supports farmers, buyers, and administrators with role-specific workflows connected to one Firestore-backed platform model." />
           <div className="grid gap-5 lg:grid-cols-3">
             {Object.entries(dashboards).map(([name, items]) => (
               <article key={name} className="rounded-lg border border-black/10 bg-white p-6 shadow-sm">

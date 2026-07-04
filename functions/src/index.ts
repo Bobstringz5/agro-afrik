@@ -15,7 +15,7 @@ export const createLivestockPassport = onDocumentCreated("livestock/{livestockId
   await snapshot.ref.set(
     {
       animalId,
-      qrCodeUrl: `https://eco-afrik.com/passport/${animalId}`,
+      qrCodeUrl: `https://agro-afrik.com/passport/${animalId}`,
       healthScore: snapshot.data().healthScore ?? 75,
       verificationStatus: snapshot.data().verificationStatus ?? "pending",
       updatedAt: new Date(),

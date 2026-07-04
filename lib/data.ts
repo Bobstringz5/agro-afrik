@@ -181,17 +181,52 @@ export const roadmap = [
   {
     year: "2026",
     title: "Nigeria Launch",
-    detail: "Pilot clusters, veterinary partners, buyer network, and passport-led marketplace launch.",
+    detail: "Pilot clusters, veterinary partners, buyer network, and passport-led marketplace launch. Projected revenue: $2.4M.",
   },
   {
     year: "2027",
     title: "West Africa Expansion",
-    detail: "Regional procurement rails, logistics partnerships, and cross-border verification workflows.",
+    detail: "Regional procurement rails, logistics partnerships, and cross-border verification workflows. Projected revenue: $6.8M (+183% YoY).",
   },
   {
     year: "2028",
     title: "Pan-African Expansion",
-    detail: "Multi-country livestock identity graph, enterprise APIs, financing, and insurance rails.",
+    detail: "Multi-country livestock identity graph, enterprise APIs, financing, and insurance rails. Projected revenue: $14.2M (+109% YoY).",
+  },
+  {
+    year: "2029",
+    title: "Financial Services Integration",
+    detail: "Launch microfinance and credit scoring using livestock as collateral. Projected revenue: $22.5M (+58% YoY).",
+  },
+  {
+    year: "2030",
+    title: "Insurance & Credit Products",
+    detail: "Full insurance product suite and agricultural lending partnerships across East and West Africa. Projected revenue: $35.8M (+59% YoY).",
+  },
+  {
+    year: "2031",
+    title: "Regional Hub Consolidation",
+    detail: "Establish regional operations centers in Kenya, Côte d'Ivoire, and South Africa. Projected revenue: $54.2M (+51% YoY).",
+  },
+  {
+    year: "2032",
+    title: "Cross-border Verification Scaling",
+    detail: "Implement AFCTA-compliant trade verification and multi-currency settlement. Projected revenue: $78.6M (+45% YoY).",
+  },
+  {
+    year: "2033",
+    title: "Enterprise API Monetization",
+    detail: "Launch B2B API platform for banks, insurers, and logistics providers. Projected revenue: $110.4M (+40% YoY).",
+  },
+  {
+    year: "2034",
+    title: "Data Analytics Platform",
+    detail: "Deploy predictive analytics for livestock productivity and market intelligence. Projected revenue: $147.2M (+33% YoY).",
+  },
+  {
+    year: "2035-2036",
+    title: "Pan-African Market Leadership",
+    detail: "Establish as the trusted livestock commerce infrastructure for 15+ African countries. Projected revenue: $185-$230M (+26-56% YoY).",
   },
 ];
 
